@@ -1,24 +1,24 @@
 package fr.dbiaz.cmpmanager.services;
 
+import fr.dbiaz.cmpmanager.entities.EmployeeEntitY;
+import fr.dbiaz.cmpmanager.repository.EmployeeRepository;
 import fr.dbiaz.cmpmanager.resources.EmployeeResource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeService {
 
-    public List<EmployeeResource> getAllEmployees() {
+    private final EmployeeRepository employeeRepository;
+
+    public List<EmployeeEntitY> getAllEmployees() {
 
 
-        List<EmployeeResource> employeeResources = new ArrayList<>();
-
-        EmployeeResource driss = new EmployeeResource("Driss", "Biaz", "24");
-
-        employeeResources.add(driss);
-
-        return employeeResources;
+       return employeeRepository.findAll();
 
     }
 }

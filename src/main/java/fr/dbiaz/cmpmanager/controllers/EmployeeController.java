@@ -1,5 +1,6 @@
 package fr.dbiaz.cmpmanager.controllers;
 
+import fr.dbiaz.cmpmanager.entities.EmployeeEntitY;
 import fr.dbiaz.cmpmanager.resources.EmployeeResource;
 import fr.dbiaz.cmpmanager.services.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ public class EmployeeController {
     private final EmployeeService employeeService;
     @GetMapping("/employees")
 
-    public List<EmployeeResource> getAllEmployees(){
+    public List<EmployeeEntitY> getAllEmployees(){
 
         return employeeService.getAllEmployees();
 
