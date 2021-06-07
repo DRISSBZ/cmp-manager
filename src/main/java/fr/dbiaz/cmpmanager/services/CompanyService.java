@@ -23,4 +23,7 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
+    public CompanyEntity create(CompanyEntity companyEntity) {
+        return companyRepository.save(companyEntity);
+    }
 }
