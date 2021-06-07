@@ -20,16 +20,7 @@ public class CompanyService {
 
 
     public List<CompanyEntity> getAllCompanies() {
-       /* List<CompanyResource> companies = new ArrayList<>();
-        CompanyResource sogetiCompany = new CompanyResource("Sogeti", "0545424324", "148 avenue tztz", "Paris", "75000", "logo", "France");
-        CompanyResource atosCompany = new CompanyResource("Atos", "4543543", "123 AVENUE MTMT", "Marseille", "12334", "Logo1", "Morocco");
-        companies.add(sogetiCompany);
-        companies.add(atosCompany);
-        return companies;*/
-
         return companyRepository.findAll();
-
-        //return null;
     }
 
 }
