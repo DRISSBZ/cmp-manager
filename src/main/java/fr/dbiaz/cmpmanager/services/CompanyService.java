@@ -1,29 +1,16 @@
 package fr.dbiaz.cmpmanager.services;
 
-import fr.dbiaz.cmpmanager.daos.repositories.CompanyRepository;
 import fr.dbiaz.cmpmanager.entities.CompanyEntity;
-import fr.dbiaz.cmpmanager.resources.CompanyResource;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class CompanyService {
+public interface CompanyService {
+;
+    List<CompanyEntity> getAllCompanies();
+    CompanyEntity create(CompanyEntity companyEntity);
+    CompanyEntity getById(Long companyId);
+    void deleteById(Long companyId);
 
+    CompanyEntity updateById(CompanyEntity companyEntity, String companyId);
 
-    private final CompanyRepository companyRepository;
-
-
-    public List<CompanyEntity> getAllCompanies() {
-        return companyRepository.findAll();
-    }
-
-    public CompanyEntity create(CompanyEntity companyEntity) {
-        return companyRepository.save(companyEntity);
-    }
 }

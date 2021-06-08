@@ -2,11 +2,9 @@ package fr.dbiaz.cmpmanager.controllers;
 
 import fr.dbiaz.cmpmanager.entities.CompanyEntity;
 import fr.dbiaz.cmpmanager.services.CompanyService;
+import fr.dbiaz.cmpmanager.services.impl.CompanyServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,10 +20,25 @@ public class CompanyController {
         return companyService.getAllCompanies();
     }
 
+    @GetMapping("companies/{companyId}")
+    public CompanyEntity getById(@PathVariable Long companyId){
+        return companyService.getById(companyId);
+
+    }
+
     @PostMapping("/companies")
     public CompanyEntity postCompany(@RequestBody CompanyEntity companyEntity){
 
        return companyService.create(companyEntity);
+    }
+    @DeleteMapping("/companies/{companyId}")
+    public void deleteById(@PathVariable Long companyId){
+         companyService.deleteById(companyId);
+
+    }
+    @PutMapping("/companies/{companyId}")
+    public CompanyEntity updateCompany(@RequestBody CompanyEntity companyEntity, @PathVariable String companyId){
+        return companyService.updateById(companyEntity, companyId);
     }
 
 
