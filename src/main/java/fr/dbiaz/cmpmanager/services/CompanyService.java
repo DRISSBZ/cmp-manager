@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CompanyService {
 ;
-    List<CompanyEntity> getAllCompanies();
+    List<CompanyEntity> getAllCompanies(String companyName);
     CompanyEntity create(CompanyEntity companyEntity);
     CompanyEntity getById(Long companyId);
     void deleteById(Long companyId);

@@ -22,7 +22,7 @@ public class CompanyServiceImpl implements CompanyService {
     private final CompanyRepository companyRepository;
 
 
-    public List<CompanyEntity> getAllCompanies() {
+    public List<CompanyEntity> getAllCompanies(String companyName) {
         return companyRepository.findAll();
     }
 
